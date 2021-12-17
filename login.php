@@ -96,10 +96,10 @@ if(!$logged_in) : ?>
 </body>  
 
 <?php else: ?>
-
+<!-- <?php header('Location: ./create-acount.php'); ?> -->
 <h1>Sekmingai prisijungete</h1>
 
-Sveiki, <?php echo $_SESSION['user']; ?>
+<?php echo $_SESSION['user']; ?>
 
 <div>
     <form method="POST">
