@@ -10,13 +10,13 @@
               <i class="fa fa-bars" aria-hidden="true"></i>
             </a>
             <nav id="primary-menu" class="menu" style="display: none;">              
-              <ul>
-                <li><a href="./create-acount.php">Sukurti sąskaitą</a></li>
-                <li><a href="./acounts.php">Peržiūrėti sąskaitas</a></li>
+              <!-- <ul>
+                <li><a href="./create-acount.php">Create acount</a></li>
                 <li><a href="#">Item</a></li>
-                <li><a href="./login.php">Atsijungti</a></li>
+                <li><a href="#">Item</a></li>
+                <li><a href="./login.php">Prisijungti</a></li>
               </ul>
-            </nav>
+            </nav> -->
 
             <script>
               function myFunction() {
