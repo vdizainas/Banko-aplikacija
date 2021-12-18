@@ -16,7 +16,8 @@ if( isset($_POST['kliento']) ) {
     $_POST['kliento']['vardas'] != '' &&
     $_POST['kliento']['pavarde'] != '' &&
     $_POST['kliento']['ask'] != '' &&
-    $_POST['kliento']['saskaitos_nr'] != ''
+    $_POST['kliento']['saskaitos_nr'] != '' &&
+    $_POST['kliento']['sum'] != ''
   ) {
     $db = file_get_contents('./db/db.json');
     $db = json_decode($db);
@@ -29,13 +30,14 @@ if( isset($_POST['kliento']) ) {
 
     $json = json_encode($klientas);
     file_put_contents('./db/db.json', $json);
+    header('Location: ./acounts.php');
 
     print_r($db);
 
   }
 }
 
-
+// $db.push($id);
 
 ?>
 
@@ -47,6 +49,7 @@ if( isset($_POST['kliento']) ) {
         
             <h1 class="mb-3 fs-3 fw-semibold">Sukurti naują sąskaitą</h1>
             <form method="POST" class="needs-validation" novalidate="">
+            <input type="hidden" class="form-control" name="kliento[sum]" value="0"/>
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="firstName" class="form-label">Vardas</label>
@@ -66,7 +69,7 @@ if( isset($_POST['kliento']) ) {
 
                 <div class="col-12">
                   <label for="ask" class="form-label">Asmens kodas</label>
-                  <input type="number" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  maxlength="11" name="kliento[ask]" required=""/>
+                  <input type="number" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" name="kliento[ask]" required=""/>
                   <div class="invalid-feedback">
                     Šis laukas privalomas
                   </div>
@@ -91,7 +94,7 @@ if( isset($_POST['kliento']) ) {
 
 <!-- formos validacija -->
 
-<!-- <script>
+<script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
   'use strict'
@@ -112,7 +115,7 @@ if( isset($_POST['kliento']) ) {
       }, false)
     })
 })()
-</script> -->
+</script>
 
 
 
