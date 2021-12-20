@@ -13,14 +13,22 @@
   // $user_data = open_db_file('./db/db.json');
   // print_r($user_data);
 
+
+  $kliento_id = $_GET['id'];
+ 
   $db = json_decode( file_get_contents('./db/db.json'), true);
   // $db = json_encode($db);
 
   foreach($db as $id => $klientas) {    
   }
 
+
+
+  
+
   // print_r(json_decode($db));
-  // echo $db;
+  // print_r($klientas);
+  // echo $klientas;
 
   
 

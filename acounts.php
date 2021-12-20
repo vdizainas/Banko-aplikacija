@@ -17,6 +17,7 @@
         $id = $_GET['id'];
 
         $db = json_decode( file_get_contents('./db/db.json'), true);
+        
 
         unset($db[$id]);
 
@@ -30,7 +31,9 @@
 
 }
 
-
+$db = json_decode( file_get_contents('./db/db.json'), true);
+print_r($db);
+// print_r($db[$id]);
 
 ?>
 
@@ -62,10 +65,14 @@
             <tbody>
                 <?php
                   $db = json_decode( file_get_contents('./db/db.json'), true);
-                  foreach($db as $id => $klientas) :
+                  foreach($db as $id => $klientas) : 
+                  print_r($id);
+                   
                 ?>
+                
                     <tr>
                         <td class="col-1"><?php echo $id; ?></td>
+                        <!-- <td class="col-1"><?php print_r($db[$id]); ?></td> -->
                         <td><?php echo $klientas['vardas']; ?></td>
                         <td><?php echo $klientas['pavarde']; ?></td>
                         <td><?php echo $klientas['ask']; ?></td>
@@ -74,7 +81,7 @@
                         <td class="col-auto">
                           <div class="row">
                             <div class="col-auto">
-                              <a href="./prideti-lesas?id=<?php echo $id; ?>" class="btn btn-outline-secondary btn-sm">Pridėti lėšas</a>
+                              <a href="./prideti-lesas.php?id=<?php echo $id; ?>" class="btn btn-outline-secondary btn-sm">Pridėti lėšas</a>
                             </div>
                             <div class="col-auto">
                               <a href="acounts.php?action=delete&id=<?php echo $id; ?>" class="btn btn-outline-secondary btn-sm">Nuskaičiuoti lėšas</a>
