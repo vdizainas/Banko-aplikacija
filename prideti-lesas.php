@@ -13,18 +13,36 @@
   // $user_data = open_db_file('./db/db.json');
   // print_r($user_data);
 
+// $kliento_id = $_GET['id'];
 
-  $kliento_id = $_GET['id'];
+
+// $db = json_encode($db);
  
-  $db = json_decode( file_get_contents('./db/db.json'), true);
-  // $db = json_encode($db);
-
-  foreach($db as $id => $klientas) {    
-  }
 
 
+if( isset($_GET['id']) ) {
+  $id = $_GET['id'];  
+}
+$db = json_decode( file_get_contents('./db/db.json'), true);
+foreach($db as $id => $klientas) {    
+}
 
-  
+// ???????????????????????????????????????????????
+// ???????????????????????????????????????????????
+
+print_r ($db[$id]);
+
+
+
+
+
+
+
+
+
+// $db = json_encode($db);
+
+
 
   // print_r(json_decode($db));
   // print_r($klientas);
@@ -45,7 +63,7 @@
             <h1 class="mb-3 fs-3 fw-semibold">Pridėti lešų</h1>
             <p>Kliento ID <?php echo $id ?> </p>
 
-      
+
             <form method="POST" class="needs-validation" novalidate="">
               <div class="row g-3">
                 <div class="col-sm-6">
@@ -84,6 +102,9 @@
                 </div>
               <button class="btn btn-primary btn-lg mt-5" type="submit">Pridėti</button>
             </form>
+
+   
+
           </div>
       </div>
 
